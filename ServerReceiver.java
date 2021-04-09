@@ -53,7 +53,7 @@ public class ServerReceiver implements Runnable{
 			boolean bool = socketData.readBoolean();
 			
 			if(size!=0L){ //Verifica se o arquivo é pra ser recebido ou enviado
-				OutputStream output = new FileOutputStream("C:\\ftp\\"+fileName);
+				OutputStream output = new FileOutputStream("./ftp_server\\"+fileName);
 				byte[] buffer = new byte[1024];     
 				while (size > 0 && (bytesRead = socketData.read(buffer, 0, (int)Math.min(buffer.length, size))) != -1)     
 				{     
@@ -82,7 +82,7 @@ public class ServerReceiver implements Runnable{
 	public void send(String fileName,String ip){
 		try{
 					
-			File myFile = new File("C:\\ftp\\"+fileName); //Arquivo a ser enviado 
+			File myFile = new File("./ftp_server\\"+fileName); //Arquivo a ser enviado 
 			byte[] mybytearray = new byte[(int) myFile.length()]; //Cria um vetor de bytes do tamanho do arquivo  
 			
 			FileInputStream fis = new FileInputStream(myFile);  
@@ -118,7 +118,7 @@ public class ServerReceiver implements Runnable{
 		try{
 			String line="";
 			
-			File folder = new File("C:\\ftp");
+			File folder = new File("./ftp_server");
 			File[] listOfFiles = folder.listFiles();
 
 			for (int i = 0; i < listOfFiles.length; i++) {

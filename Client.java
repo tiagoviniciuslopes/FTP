@@ -28,7 +28,7 @@ public class Client {
 	}
 	public void abreServidor()throws Exception{
 		ClientServer sc = new ClientServer(this);
-		new File("C:\\ftp_received").mkdir(); //Pasta onde os arquivos recebidos serão armazenados
+		new File("./ftp_received").mkdir(); //Pasta onde os arquivos recebidos serão armazenados
 		new Thread(sc).start();
 	}
 	

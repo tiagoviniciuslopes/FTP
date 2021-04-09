@@ -37,7 +37,7 @@ public class Server{
 	public void abreServidor() throws Exception{
 		servidor = new ServerSocket(8889);
 		InetAddress ip = InetAddress.getLocalHost();	
-		new File("C:\\ftp").mkdir(); //Pasta onde os arquivos recebidos serão armazenados
+		new File("./ftp_server").mkdir(); //Pasta onde os arquivos recebidos serão armazenados
 		System.out.println("Porta "+servidor.getLocalPort()+" aberta!");
 		System.out.println("IP do servidor: "+ip.getHostAddress());
 		
